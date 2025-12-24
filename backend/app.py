@@ -11,9 +11,12 @@ from learning_plan import generate_7_day_plan
 app = FastAPI(title="AI Career Copilot")
 
 # CORS for React frontend
+from fastapi.middleware.cors import CORSMiddleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
+    allow_origins=[
+        "http://localhost:5173",
+        "https://ai-career-copilot.netlify.app"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
