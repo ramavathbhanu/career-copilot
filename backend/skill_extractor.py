@@ -1,7 +1,4 @@
-import spacy
-
 # Load English NLP model
-nlp = spacy.load("en_core_web_sm")
 
 # Predefined skill list (you will expand this later)
 SKILLS_DB = [
@@ -13,15 +10,18 @@ SKILLS_DB = [
 ]
 
 def extract_skills(text):
+    skills = [
+        "python", "java", "c", "c++", "sql", "mysql",
+        "javascript", "html", "css", "node"
+    ]
+    found = []
     text = text.lower()
-    found_skills = set()
 
-    for skill in SKILLS_DB:
+    for skill in skills:
         if skill in text:
-            found_skills.add(skill)
+            found.append(skill)
 
-    return list(found_skills)
-
+    return list(set(found))
 
 if __name__ == "__main__":
     sample_text = """
