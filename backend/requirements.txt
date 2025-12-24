@@ -1,5 +1,4 @@
-fastapi==0.95.2
-uvicorn==0.22.0
+fastapi
+uvicorn
 python-multipart
-pymupdf
-spacy
+pymupdf==1.22.5
